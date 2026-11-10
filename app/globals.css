@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+:root{color-scheme:dark;--gold:#edc66d}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -10%,#25366d 0%,transparent 48%),linear-gradient(180deg,#080d22,#090d1c);color:#f8fafc;font-family:'DM Sans',sans-serif}
+button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.4;cursor:not-allowed}
+.display{font-family:'Space Grotesk',sans-serif}.gold{background:linear-gradient(110deg,#fff0b8,#e6b64f 55%,#fff0b8);background-clip:text;color:transparent}
+.panel{background:linear-gradient(145deg,rgba(24,35,73,.96),rgba(13,20,45,.96));border:1px solid rgba(152,170,220,.16);box-shadow:0 18px 55px #0003}
+.answer{border:1px solid #8291b533;background:#142042;transition:.18s}.answer:hover:not(:disabled){border-color:#edc66d;background:#55472d55;transform:translateY(-1px)}.answer.selected{border-color:#edc66d;background:#ad803132}.answer.correct{border-color:#43c88a;background:#19875433}.answer.wrong{border-color:#ef7474;background:#962a3738}
+.pill{border:1px solid #edc66d44;background:#edc66d12}.stage{box-shadow:0 0 0 1px #edc66d22,0 0 55px #4064dc29,inset 0 0 45px #4b5daa14}
