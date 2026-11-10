@@ -43,8 +43,8 @@ export async function GET(request: NextRequest) {
     records.sort((a, b) => b.bestScore - a.bestScore || a.name.localeCompare(b.name));
     const ranked = records.slice(0, 100);
     if (request.nextUrl.searchParams.get("format") === "txt") {
-      const lines = ["KBC ARENA — GLOBAL LEADERBOARD", "Generated: " + new Date().toISOString(), "", "RANK | PLAYER | BEST SCORE | GAMES PLAYED", "-----|--------|------------|-------------", ...ranked.map((r, index) => `${index + 1} | ${r.name.replace(/[|\\r\\n]/g, " ")} | ₹${r.bestScore.toLocaleString("en-IN")} | ${r.gamesPlayed}`)];
-      return new NextResponse(lines.join("\\n") + "\\n", { headers: { "Content-Type": "text/plain; charset=utf-8", "Content-Disposition": "attachment; filename=leaderboard.txt", "Cache-Control": "no-store" } });
+      const lines = ["KBC ARENA — GLOBAL LEADERBOARD", "Generated: " + new Date().toISOString(), "", "RANK | PLAYER | BEST SCORE | GAMES PLAYED", "-----|--------|------------|-------------", ...ranked.map((r, index) => `${index + 1} | ${r.name.replace(/[|\r\n]/g, " ")} | ₹${r.bestScore.toLocaleString("en-IN")} | ${r.gamesPlayed}`)];
+      return new NextResponse(lines.join("\n") + "\n", { headers: { "Content-Type": "text/plain; charset=utf-8", "Content-Disposition": "attachment; filename=leaderboard.txt", "Cache-Control": "no-store" } });
     }
     return NextResponse.json({ leaderboard: ranked }, {
       headers: { "Cache-Control": "no-store, max-age=0" },
